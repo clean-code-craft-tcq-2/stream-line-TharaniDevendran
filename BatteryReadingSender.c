@@ -10,7 +10,7 @@ void printOnConsole(float temperature, float SOC, float CR){
 void ReadBatterReadingsfromFile(float* Temperature, float* SOC, float* ChargeRate)
 {
     float Temperature_reading, SOC_reading,CR_reading;
-    FILE* fp= fopen("./Battery_Reading.txt,"r");  
+    FILE* fp= fopen("./Battery_Reading.txt","r");  
 
     if (NULL == fp)
     {
