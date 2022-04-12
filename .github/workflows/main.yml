@@ -19,6 +19,9 @@ jobs:
       
     - name: run
       run: ./testchecker
+      
+    - name: run
+      run: BatteryReadingSender.c | BatteryReadingReceiver.c
 
     - name: collect coverage
       run: gcovr --gcov-exclude=".*test.*" -r . --html --html-details -o coverage.html --print-summary
@@ -28,4 +31,4 @@ jobs:
       with:
         name: coverage
         path: ./*.html
-        retention-days: 90
+        retention-days: 21
