@@ -28,4 +28,4 @@ jobs:
       with:
         name: coverage
         path: ./*.html
-        retention-days: 21
+        retention-days: 90
