@@ -27,9 +27,9 @@ TEST_CASE("Tests to check whether sensor data is read from console") {
   Current_MaxValue = GetParameterMaxReadingValue(&test_Temperature[0]);
   Current_MinValue = GetParameterMinReadingValue(&test_Temperature[0]);
   Current_SMAValue = GetParameterSMAValue(&test_Temperature[0]);
-  REQUIRE(Current_MaxValue,expectedMaxValue);
-  REQUIRE(Current_MinValue,expectedMinValue);
-  REQUIRE(Current_SMAValue,expectedSMAValue);
+  REQUIRE(Current_MaxValue == expectedMaxValue);
+  REQUIRE(Current_MinValue == expectedMinValue);
+  REQUIRE(Current_SMAValue == expectedSMAValue);
   
   // Verify Max, Min and SMA values are correct for parameter SOC
   expectedMaxValue = 99;
@@ -38,9 +38,9 @@ TEST_CASE("Tests to check whether sensor data is read from console") {
   Current_MaxValue = GetParameterMaxReadingValue(&test_SOC[0]);
   Current_MinValue = GetParameterMinReadingValue(&test_SOC[0]);
   Current_SMAValue = GetParameterSMAValue(&test_SOC[0]);
-  REQUIRE(Current_MaxValue,expectedMaxValue);
-  REQUIRE(Current_MinValue,expectedMinValue);
-  REQUIRE(Current_SMAValue,expectedSMAValue);
+  REQUIRE(Current_MaxValue == expectedMaxValue);
+  REQUIRE(Current_MinValue == expectedMinValue);
+  REQUIRE(Current_SMAValue == expectedSMAValue);
   
   // Verify Max, Min and SMA values are correct for parameter ChargeRate
   expectedMaxValue = 1.0;
@@ -49,8 +49,8 @@ TEST_CASE("Tests to check whether sensor data is read from console") {
   Current_MaxValue = GetParameterMaxReadingValue(&test_ChargeRate[0]);
   Current_MinValue = GetParameterMinReadingValue(&test_ChargeRate[0]);
   Current_SMAValue = GetParameterSMAValue(&test_ChargeRate[0]);
-  REQUIRE(Current_MaxValue,expectedMaxValue);
-  REQUIRE(Current_MinValue,expectedMinValue);
-  REQUIRE(Current_SMAValue,expectedSMAValue);
+  REQUIRE(Current_MaxValue == expectedMaxValue);
+  REQUIRE(Current_MinValue == expectedMinValue);
+  REQUIRE(Current_SMAValue == expectedSMAValue);
   
 }
