@@ -2,18 +2,19 @@
 
 #include "catch.hpp"
 #include "BatteryReadingReceiver.h"
+#include "BatteryReadingSender.h"
 
 TEST_CASE("Tests to check whether sensor data is read from console") {
-  float Temperature[NO_OF_READINGS] = {0};
-  float SOC[NO_OF_READINGS] = {0};
-  float ChargeRate[NO_OF_READINGS] = {0};
-  GetSensorDataFromConsole(&Temperature[0],&SOC[0],&ChargeRate[0]);
+  float test_Temperature[NO_OF_READINGS] = {0};
+  float test_SOC[NO_OF_READINGS] = {0};
+  float test_ChargeRate[NO_OF_READINGS] = {0};
+  GetSensorDataFromConsole(&test_Temperature[0],&test_SOC[0],&test_ChargeRate[0]);
   
   float expectedoutput[3][3] = {{49,66,0.34}, {28,67,0.8},{88,90,0.52}};
-  for(int i=0;i<3;i++)
+  for(int i=0;i<NO_OF_READINGS;i++)
   {
-    REQUIRE(Temperature[i] == expectedoutput[i][0]);
-    REQUIRE(SOC[i] == expectedoutput[i][1]);
-    REQUIRE(ChargeRate[i] == expectedoutput[i][2]);
+    REQUIRE(test_Temperature[i] == expectedoutput[i][0]);
+    REQUIRE(test_SOC[i] == expectedoutput[i][1]);
+    REQUIRE(test_ChargeRate[i] == expectedoutput[i][2]);
   }
 }
