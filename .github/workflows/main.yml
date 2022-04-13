@@ -22,12 +22,11 @@ jobs:
     - name: run sender
       run: ./testsender
       
-    - name: Pipeline sender/receiver
-      run: ./testsender | ./testreceiver
-      
     - name: build receiver
       run: g++ -Wall -Wextra -fprofile-arcs -ftest-coverage -o testreceiver test_BatteryReadingReceiver.cpp ./BatteryReadingReceiver.c
-  
+      
+    - name: Pipeline sender/receiver
+      run: ./testsender | ./testreceiver  
       
     - name: run receiver
       run: ./testreceiver
