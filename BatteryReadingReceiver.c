@@ -74,4 +74,7 @@ void PrintReceivedDataOnConsole(float *BMSParameter, float MaxValue, float Minva
 void BMSReceiver(float* Temperature, float* SOC, float* ChargeRate)
 {
   GetSensorDataFromConsole(Temperature,SOC,ChargeRate);
+  PrintReceivedDataOnConsole(Temperature,GetParameterMaxReadingValue(Temperature),GetParameterMinReadingValue(Temperature),GetParameterSMAValue(Temperature));
+  PrintReceivedDataOnConsole(SOC,GetParameterMaxReadingValue(SOC),GetParameterMinReadingValue(SOC),GetParameterSMAValue(SOC));
+  PrintReceivedDataOnConsole(ChargeRate,GetParameterMaxReadingValue(ChargeRate),GetParameterMinReadingValue(ChargeRate),GetParameterSMAValue(ChargeRate));
 }
