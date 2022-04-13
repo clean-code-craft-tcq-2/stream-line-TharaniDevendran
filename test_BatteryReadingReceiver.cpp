@@ -2,7 +2,7 @@
 
 #include "BatteryReadingReceiver.h"
 #include "BatteryReadingSender.h"
-#include "test/catch.hpp"
+#include "catch.hpp"
 
 TEST_CASE("Tests to check whether sensor data is read from console") {
   float Temperature[NO_OF_READINGS], SOC[NO_OF_READINGS], ChargeRate[NO_OF_READINGS];
