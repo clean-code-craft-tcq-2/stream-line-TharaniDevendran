@@ -25,7 +25,7 @@ void ReadBatterReadingsfromFile(float* Temperature, float* SOC, float* ChargeRat
             *(ChargeRate+i)   = CR_reading;
         }
     }
-    //printf(" Temperature : %.2f , State of Charge : %.2f , Charge Rate : %.2f \n",Temperature_reading,SOC_reading,CR_reading);
+   
     //fclose(fp);  
 }
 
@@ -37,7 +37,6 @@ void SendBatteryReadingsToConsole(float* Temperature, float* SOC, float* ChargeR
         Temperature_ToPrint = *(Temperature+i);
         SOC_ToPrint = *(SOC+i);
         CR_ToPrint = *(ChargeRate+i);
-        printf(" Temperature : %.2f , State of Charge : %.2f , Charge Rate : %.2f \n",Temperature_ToPrint,SOC_ToPrint,CR_ToPrint);
         printOnConsole(Temperature_ToPrint, SOC_ToPrint, CR_ToPrint);
     }
 }
@@ -46,5 +45,6 @@ void ReadBatterReadingsfromFile()
 {
   float Temperature[NO_OF_READINGS], SOC[NO_OF_READINGS], ChargeRate[NO_OF_READINGS] = {0};
   ReadBatterReadingsfromFile(Temperature,SOC,ChargeRate);
+  printf(" Temperature : %.2f , State of Charge : %.2f , Charge Rate : %.2f \n",Temperature,SOC,ChargeRate);
   SendBatteryReadingsToConsole(Temperature,SOC,ChargeRate);
 }
