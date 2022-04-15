@@ -26,7 +26,7 @@ void ReadBatterReadingsfromFile(float* Temperature, float* SOC, float* ChargeRat
         }
     }
     //printf(" Temperature : %.2f , State of Charge : %.2f , Charge Rate : %.2f \n",Temperature_reading,SOC_reading,CR_reading);
-    fclose(fp);  
+    //fclose(fp);  
 }
 
 void SendBatteryReadingsToConsole(float* Temperature, float* SOC, float* ChargeRate)
