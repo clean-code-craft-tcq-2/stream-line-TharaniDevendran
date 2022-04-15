@@ -25,6 +25,7 @@ void ReadBatterReadingsfromFile(float* Temperature, float* SOC, float* ChargeRat
             *(ChargeRate+i)   = CR_reading;
         }
     }
+    printf(" Temperature : %.2f , State of Charge : %.2f , Charge Rate : %.2f \n",Temperature_reading,SOC_reading,CR_reading);
     fclose(fp);  
 }
 
