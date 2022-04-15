@@ -36,7 +36,7 @@ void SendBatteryReadingsToConsole(float* Temperature, float* SOC, float* ChargeR
         Temperature_ToPrint = *(Temperature+i);
         SOC_ToPrint = *(SOC+i);
         CR_ToPrint = *(ChargeRate+i);
-        //printOnConsole(Temperature_ToPrint, SOC_ToPrint, CR_ToPrint);
+        printOnConsole(Temperature_ToPrint, SOC_ToPrint, CR_ToPrint);
     }
 }
 
