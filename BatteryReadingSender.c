@@ -40,9 +40,8 @@ void SendBatteryReadingsToConsole(float* Temperature, float* SOC, float* ChargeR
     }
 }
 
-void BatteryReadingSender()
+void BatteryReadingSender(float* Temperature, float* SOC, float* ChargeRate)
 {
-  float Temperature[NO_OF_READINGS], SOC[NO_OF_READINGS], ChargeRate[NO_OF_READINGS] = {0};
   ReadBatteryReadingsfromFile(Temperature,SOC,ChargeRate);
   SendBatteryReadingsToConsole(Temperature,SOC,ChargeRate);
 }
