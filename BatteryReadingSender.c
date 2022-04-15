@@ -3,16 +3,11 @@
 #include <math.h>
 #include <stdlib.h>
 
-void printOnConsole(float* Temperature, float* SOC, float* ChargeRate)
-{
-        for(int i = 0; i<NO_OF_READINGS;i++)
-    {
-        printf(" Temperature : %.2f , State of Charge : %.2f , Charge Rate : %.2f \n",Temperature[i],SOC[i],ChargeRate[i]);
-    }
-  
+void printOnConsole(float temperature, float SOC, float CR){
+    printf(" Temperature : %.2f , State of Charge : %.2f , Charge Rate : %.2f \n",temperature,SOC,CR);
 }
 
-float* ReadBatterReadingsfromFile(float* Temperature, float* SOC, float* ChargeRate)
+void ReadBatteryReadingsfromFile(float* Temperature, float* SOC, float* ChargeRate)
 {
     float Temperature_reading, SOC_reading,CR_reading;
     FILE* fp= fopen("./Battery_Reading.txt","r");  
@@ -45,10 +40,9 @@ void SendBatteryReadingsToConsole(float* Temperature, float* SOC, float* ChargeR
     }
 }
 
-void ReadBatterReadingsfromFile()
+void BatteryReadingSender()
 {
   float Temperature[NO_OF_READINGS], SOC[NO_OF_READINGS], ChargeRate[NO_OF_READINGS] = {0};
-  ReadBatterReadingsfromFile(Temperature,SOC,ChargeRate);
-  printOnConsole(Temperature,SOC,ChargeRate);
-  //SendBatteryReadingsToConsole(Temperature,SOC,ChargeRate);
+  ReadBatteryReadingsfromFile(Temperature,SOC,ChargeRate);
+  SendBatteryReadingsToConsole(Temperature,SOC,ChargeRate);
 }
