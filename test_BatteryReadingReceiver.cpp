@@ -44,7 +44,7 @@ TEST_CASE("Tests to check whether sensor data is read from console") {
   
   // Verify Max, Min and SMA values are correct for parameter ChargeRate
   expectedMaxValue = 1.0;
-  expectedMinValue = -0.05;
+  expectedMinValue = -0.50;
   expectedSMAValue = 0.234;
   Current_MaxValue = GetParameterMaxReadingValue(&test_ChargeRate[0]);
   Current_MinValue = GetParameterMinReadingValue(&test_ChargeRate[0]);
