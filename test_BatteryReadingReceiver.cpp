@@ -12,14 +12,6 @@ TEST_CASE("Tests to check whether sensor data is read from console") {
   
   GetSensorDataFromConsole(&test_Temperature[0],&test_SOC[0],&test_ChargeRate[0]);
   
-  float expectedoutput[2][3] = {{49,66,0.34}, {28,67,0.8}};
-  for(int i=0;i<2;i++)
-  {
-    REQUIRE(test_Temperature[i] == expectedoutput[i][0]);
-    REQUIRE(test_SOC[i] == expectedoutput[i][1]);
-    REQUIRE(test_ChargeRate[i] == expectedoutput[i][2]);
-  }
-  
   // Verify Max, Min and SMA values are correct for parameter Temperature
   expectedMaxValue = 92;
   expectedMinValue = -15;
@@ -52,5 +44,13 @@ TEST_CASE("Tests to check whether sensor data is read from console") {
   REQUIRE(Current_MaxValue == expectedMaxValue);
   REQUIRE(Current_MinValue == expectedMinValue);
   REQUIRE(Current_SMAValue == expectedSMAValue);
+  
+  float expectedoutput[2][3] = {{49,66,0.34}, {28,67,0.8}};
+  for(int i=0;i<2;i++)
+  {
+    REQUIRE(test_Temperature[i] == expectedoutput[i][0]);
+    REQUIRE(test_SOC[i] == expectedoutput[i][1]);
+    REQUIRE(test_ChargeRate[i] == expectedoutput[i][2]);
+  }
   
 }
