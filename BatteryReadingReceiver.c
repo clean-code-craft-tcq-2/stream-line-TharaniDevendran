@@ -50,9 +50,10 @@ float GetParameterMinReadingValue(float *BMSParameter)
 
 float GetParameterSMAValue(float *BMSParameter)
 {
-  float Sum =0, SMAValue = 0;
+  float SMAValue = 0.0;
+  float Sum = 0.0;
   int readingIndex = 0;
-  for(readingIndex = (NO_OF_READINGS-4); readingIndex <= NO_OF_READINGS; readingIndex++)
+  for(readingIndex = (NO_OF_READINGS-5); readingIndex < NO_OF_READINGS; readingIndex++)
   {
     Sum += BMSParameter[readingIndex];
   }
