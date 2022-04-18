@@ -46,10 +46,10 @@ TEST_CASE("Tests to check whether sensor data is read from console") {
   expectedMaxValue = 1.0;
   expectedMinValue = -0.50;
   expectedSMAValue = 0.234;
-  printf("Current CR Max:%f, Min:%f, SMA:%f\n Expected CR Max:%f, Min:%f, SMA:%f\n",Current_MaxValue,Current_MinValue,Current_SMAValue,expectedMaxValue,expectedMinValue,expectedSMAValue);
   Current_MaxValue = GetParameterMaxReadingValue(&test_ChargeRate[0]);
   Current_MinValue = GetParameterMinReadingValue(&test_ChargeRate[0]);
   Current_SMAValue = GetParameterSMAValue(&test_ChargeRate[0]);
+  printf("Current CR Max:%f, Min:%f, SMA:%f\n Expected CR Max:%f, Min:%f, SMA:%f\n",Current_MaxValue,Current_MinValue,Current_SMAValue,expectedMaxValue,expectedMinValue,expectedSMAValue);
   REQUIRE(Current_MaxValue == expectedMaxValue);
   REQUIRE(Current_MinValue == expectedMinValue);
   REQUIRE(Current_SMAValue == expectedSMAValue);
