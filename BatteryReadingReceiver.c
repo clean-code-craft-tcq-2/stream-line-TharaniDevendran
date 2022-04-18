@@ -7,7 +7,12 @@ void GetSensorDataFromConsole(float* Temperature, float* SOC, float* ChargeRate)
   
   for(readingIndex = 0; readingIndex < NO_OF_READINGS; readingIndex++)
   {
-    scanf("%f,%f,%f",&Temperature[readingIndex],&SOC[readingIndex],&ChargeRate[readingIndex]);
+    scanf("%f ,%f ,%f",&Temperature[readingIndex],&SOC[readingIndex],&ChargeRate[readingIndex]);
+  }
+  
+  for(readingIndex = 0; readingIndex < NO_OF_READINGS; readingIndex++)
+  {
+    printf("%f,%f,%f",Temperature[readingIndex],SOC[readingIndex],ChargeRate[readingIndex]);
   }
 }
 
