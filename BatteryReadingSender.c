@@ -4,7 +4,7 @@
 #include <stdlib.h>
 
 void printOnConsole(float temperature, float SOC, float CR){
-    printf(" Temperature : %.2f , State of Charge : %.2f , Charge Rate : %.2f \n",temperature,SOC,CR);
+    printf("%.2f ,%.2f ,%.2f \n",temperature,SOC,CR);
 }
 
 void ReadBatteryReadingsfromFile(float* Temperature, float* SOC, float* ChargeRate)
