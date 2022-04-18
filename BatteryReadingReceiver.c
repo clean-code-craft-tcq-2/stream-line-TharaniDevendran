@@ -39,7 +39,7 @@ float GetParameterMinReadingValue(float *BMSParameter)
   
   for(readingIndex = 0; readingIndex < NO_OF_READINGS; readingIndex++)
   {
-    if(BMSParameter[readingIndex] > MinReadingValue)
+    if(BMSParameter[readingIndex] < MinReadingValue)
     {
       MinReadingValue = BMSParameter[readingIndex];
     }
@@ -50,9 +50,9 @@ float GetParameterMinReadingValue(float *BMSParameter)
 
 float GetParameterSMAValue(float *BMSParameter)
 {
-  float Sum, SMAValue = 0;
+  float Sum =0, SMAValue = 0;
   int readingIndex = 0;
-  for(readingIndex = NO_OF_READINGS-4; readingIndex <= NO_OF_READINGS; readingIndex++)
+  for(readingIndex = (NO_OF_READINGS-4); readingIndex <= NO_OF_READINGS; readingIndex++)
   {
     Sum += BMSParameter[readingIndex];
   }
