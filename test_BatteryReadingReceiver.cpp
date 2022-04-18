@@ -22,6 +22,7 @@ TEST_CASE("Tests to check whether sensor data is read from console") {
   REQUIRE(Current_MaxValue == expectedMaxValue);
   REQUIRE(Current_MinValue == expectedMinValue);
   REQUIRE(Current_SMAValue == expectedSMAValue);
+  printf("Current Temperature Max:%f, Min:%f, SMA:%f\n Expected Temperature Max:%f, Min:%f, SMA:%f\n",Current_MaxValue,Current_MinValue,Current_SMAValue,expectedMaxValue,expectedMinValue,expectedSMAValue);
   
   // Verify Max, Min and SMA values are correct for parameter SOC
   expectedMaxValue = 99;
