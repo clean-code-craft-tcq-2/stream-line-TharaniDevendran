@@ -52,6 +52,6 @@ TEST_CASE("Tests to check whether sensor data is read from console") {
   printf("Current CR Max:%f, Min:%f, SMA:%f\n Expected CR Max:%f, Min:%f, SMA:%f\n",Current_MaxValue,Current_MinValue,Current_SMAValue,expectedMaxValue,expectedMinValue,expectedSMAValue);
   REQUIRE(Current_MaxValue == expectedMaxValue);
   REQUIRE(Current_MinValue == expectedMinValue);
-  REQUIRE(Current_SMAValue == expectedSMAValue);
+  REQUIRE(Current_SMAValue == 0.234);
   
 }
