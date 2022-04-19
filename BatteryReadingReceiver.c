@@ -63,7 +63,7 @@ float GetParameterSMAValue(float *BMSParameter)
 void PrintReceivedDataOnConsole(float *BMSParameter, float MaxValue, float Minvalue, float SMA)
 {
   int readingIndex = 0;
-  printf("Data received from sender");
+  printf("Data received from sender\n");
   
   for(readingIndex = 0; readingIndex < NO_OF_READINGS; readingIndex++)
   {
